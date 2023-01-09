@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>E-Commerce Application (20KTPMB)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./public/css/scss.scss" />
+    <link rel="stylesheet" type="text/css" href="public/css/studentList.scss" />
+  <style>
+    * {
+      font-size: 14px;
+    }
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        position: absolute;
+        left: 20px;
+    }
+
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        position: absolute;
+        right: 20px;
+    }
+    .checked {
+        color: orange;
+    }
+  </style>
+
+  {{{_sections.css}}}
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <a class="navbar-brand" href="#">
+      <i class="fa fa-home fa-lg" aria-hidden="true"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          Search
+        </button>
+      </form>
+    </div>
+  </nav>
+  <div class="container-fluid mt-4">
+      <div class="row">
+          <div class="col-sm-3">
+              <div class="card mb-3">
+                  <h4 class="card-header">
+                      Feature Menu
+                  </h4>
+                  <div class="list-group list-group-flush">
+                      <a href="/admin/manageStudent" onclick="notify(this)" class="list-group-item list-group-item-action">
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          Student List Management
+                      </a>
+                      <a href="/admin/manageInstructor" onclick="notify(this)" class="list-group-item list-group-item-action">
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          Instructor List Management
+                      </a>
+                      <a href="/admin/manageField" onclick="notify(this)" class="list-group-item list-group-item-action">
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          Field Management
+                      </a>
+                      <a href="/admin/manageCat" onclick="notify(this)" class="list-group-item list-group-item-action">
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          Category Management
+                      </a>
+                      <a href="/admin/manageCourse" onclick="notify(this)" class="list-group-item list-group-item-action">
+                          <i class="fa fa-caret-right" aria-hidden="true"></i>
+                          Course Management
+                      </a>
+                  </div>
+              </div>
+
+          </div>
+          <div class="col-sm-9">
+              {{{body}}}
+          </div>
+      </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+  <script>
+      // $(document).off("click", ".list-group .list-group-item").on("click", ".list-group .list-group-item", function () {
+      //     try {
+      //         $(".list-group .list-group-item").removeClass("active");
+      //     } catch (e) { }
+      //
+      //     $(this).addClass("active");
+      // });
+      function notify(el) {
+          resetElements();
+          console.log("hihihi");
+          el.classList.add('active');
+      }
+
+      function resetElements() {
+          // Get all elements with "active" class
+          let els = document.getElementsByClassName("active");
+
+          // Loop over Elements to remove active class;
+          for (let i = 0; i < els.length; i++) {
+              els[i].classList.remove('active')
+          }
+      }
+
+  </script>
+
+</body>
+
+</html>
